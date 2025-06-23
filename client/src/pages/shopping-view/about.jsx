@@ -96,15 +96,15 @@ function AboutUs() {
 
     emailjs
       .send(
-        "service_pqdlfkg", // Your Service ID
-        "template_my6hm0k", // Replace with your actual Template ID from Email Templates
+        import.meta.env.EMAIL_SERVICE_ID, // Your Service ID
+        import.meta.env.EMAIL_TEMPLATE_ID, // Replace with your actual Template ID from Email Templates
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        "x_orYEmLPGkQTciHn" // Your Public Key
+        import.meta.env.EMAIL_PUBLIC_KEY // Your Public Key
       )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);

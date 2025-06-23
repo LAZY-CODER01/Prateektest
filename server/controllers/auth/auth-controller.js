@@ -123,18 +123,20 @@ const loginUser = async (req, res) => {
       { expiresIn: "60m" }
     );
 
-    res.cookie("token", token, { httpOnly: true, secure: true }).json({
-      success: true,
-      message: "LoggedIn Successfully!",
-      user: {
-        email: checkUser.email,
-        role: checkUser.role,
-        id: checkUser._id,
-        userName: checkUser.userName,
-        phoneNumber: checkUser.phoneNumber,
-        isPhoneVerified: checkUser.isPhoneVerified,
-      },
-    });
+    // res.cookie("token", token, { httpOnly: true, secure: true }).json({
+    //   success: true,
+    //   message: "LoggedIn Successfully!",
+    //   user: {
+    //     email: checkUser.email,
+    //     role: checkUser.role,
+    //     id: checkUser._id,
+    //     userName: checkUser.userName,
+    //     phoneNumber: checkUser.phoneNumber,
+    //     isPhoneVerified: checkUser.isPhoneVerified,
+    //   },
+    // });
+
+    
   } catch (e) {
     console.log(e);
     res.status(500).json({
