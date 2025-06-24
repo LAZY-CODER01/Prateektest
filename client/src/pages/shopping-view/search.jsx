@@ -216,12 +216,12 @@ function SearchProducts() {
               className="col-span-full flex flex-col items-center justify-center py-24"
             >
               <SparklesText
-                className="text-4xl md:text-5xl font-bold mb-4 playfair-font"
+                className="text-4xl md:text-5xl font-bold mb-4 playfair-font text-center"
                 colors={{ first: "#C9A66B", second: "#A67C52" }}
               >
                 No result found!
               </SparklesText>
-              <p className="text-lg text-amber-700 font-medium mt-2">
+              <p className="text-lg text-amber-700 font-medium mt-2 text-center">
                 Try a different keyword or explore our featured collections.
               </p>
             </motion.div>

@@ -49,7 +49,7 @@ const App = () => {
     ); //  skellton loading timing 2 hours 56 minute
 
   return (
-    <DesktopOnly>
+    
       <div className="flex flex-col overflow-hidden bg-white">
         {/* common component */}
         {/* <h1>Header components</h1> */}
@@ -112,7 +112,7 @@ const App = () => {
           <Route path="/unauth-page" element={<UnauthPage />} />
         </Routes>
       </div>
-    </DesktopOnly>
+   
   );
 };
 

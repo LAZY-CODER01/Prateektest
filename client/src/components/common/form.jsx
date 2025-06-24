@@ -21,6 +21,154 @@ import { BorderBeam } from "../magicui/border-beam";
 import { motion } from "framer-motion";
 import { FlickeringGrid } from "../magicui/flickering-grid";
 
+// function CommonForm({
+//   formControls,
+//   formData,
+//   setFormData,
+//   onSubmit,
+//   buttonText,
+//   isBtnDisabled,
+// }) {
+//   function renderInputsByComponentType(getControlItem) {
+//     const value = formData[getControlItem.name] || "";
+
+//     switch (getControlItem.componentType) {
+//       case "input":
+//         return (
+//           <Input
+//             className="w-full px-8 py-4 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+//             name={getControlItem.name}
+//             placeholder={getControlItem.placeholder}
+//             id={getControlItem.name}
+//             type={getControlItem.type}
+//             value={value}
+//             onChange={(event) =>
+//               setFormData({
+//                 ...formData,
+//                 [getControlItem.name]: event.target.value,
+//               })
+//             }
+//           />
+//         );
+
+//       case "select":
+//         return (
+//           <Select
+//             onValueChange={(value) =>
+//               setFormData({
+//                 ...formData,
+//                 [getControlItem.name]: value,
+//               })
+//             }
+//             value={value}
+//           >
+//             <SelectTrigger className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+//               <SelectValue placeholder={getControlItem.label} />
+//             </SelectTrigger>
+//             <SelectContent>
+//               {getControlItem.options?.map((optionItem) => (
+//                 <SelectItem key={optionItem.id} value={optionItem.id}>
+//                   {optionItem.label}
+//                 </SelectItem>
+//               ))}
+//             </SelectContent>
+//           </Select>
+//         );
+
+//       case "textarea":
+//         return (
+//           <Textarea
+//             className="w-full px-4 py-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+//             name={getControlItem.name}
+//             placeholder={getControlItem.placeholder}
+//             id={getControlItem.name}
+//             value={value}
+//             onChange={(event) =>
+//               setFormData({
+//                 ...formData,
+//                 [getControlItem.name]: event.target.value,
+//               })
+//             }
+//           />
+//         );
+
+//       default:
+//         return (
+//           <Input
+//             className="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+//             name={getControlItem.name}
+//             placeholder={getControlItem.placeholder}
+//             id={getControlItem.name}
+//             type={getControlItem.type}
+//             value={value}
+//             onChange={(event) =>
+//               setFormData({
+//                 ...formData,
+//                 [getControlItem.name]: event.target.value,
+//               })
+//             }
+//           />
+//         );
+//     }
+//   }
+
+//   return (
+//     <Card className="relative w-[450px] overflow-hidden shadow-xl/20 form-card">
+//       <CardHeader>
+//         {/* <CardTitle>{title}</CardTitle> */}
+//         {/* <CardDescription>{description}</CardDescription> */}
+//       </CardHeader>
+//       <form onSubmit={onSubmit}>
+//         <CardContent className="grid gap-4">
+//           {formControls.map((controlItem) => (
+//             <div className="flex flex-col space-y-1.5" key={controlItem.name}>
+//               <Label
+//                 htmlFor={controlItem.name}
+//                 className="text-md input-heading"
+//               >
+//                 {controlItem.label}
+//               </Label>
+//               {renderInputsByComponentType(controlItem)}
+//             </div>
+//           ))}
+//         </CardContent>
+//         <CardFooter className="flex justify-between items-center mt-5">
+//           <Button
+//             type="submit"
+//             disabled={isBtnDisabled}
+//             className="w-full bg-black hover:bg-zinc-700 text-white button-ui"
+//           >
+//             {isBtnDisabled && (
+//               <svg
+//                 className="animate-spin h-4 w-4 mr-2 inline-block text-white"
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 fill="none"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <circle
+//                   className="opacity-25"
+//                   cx="12"
+//                   cy="12"
+//                   r="10"
+//                   stroke="currentColor"
+//                   strokeWidth="4"
+//                 ></circle>
+//                 <path
+//                   className="opacity-75"
+//                   fill="currentColor"
+//                   d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+//                 ></path>
+//               </svg>
+//             )}
+//             {buttonText || "Submit"}
+//           </Button>
+//         </CardFooter>
+//       </form>
+//       <BorderBeam duration={8} size={100} />
+//     </Card>
+//   );
+// }
+
 function CommonForm({
   formControls,
   formData,
@@ -36,7 +184,7 @@ function CommonForm({
       case "input":
         return (
           <Input
-            className="w-full px-8 py-4 p-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             name={getControlItem.name}
             placeholder={getControlItem.placeholder}
             id={getControlItem.name}
@@ -113,11 +261,9 @@ function CommonForm({
   }
 
   return (
-    <Card className="relative w-[450px] overflow-hidden shadow-xl/20 form-card">
-      <CardHeader>
-        {/* <CardTitle>{title}</CardTitle> */}
-        {/* <CardDescription>{description}</CardDescription> */}
-      </CardHeader>
+    <Card className="relative w-full max-w-md mx-auto px-4 sm:px-6 py-6 sm:py-8 shadow-xl/20 form-card">
+      <CardHeader></CardHeader>
+
       <form onSubmit={onSubmit}>
         <CardContent className="grid gap-4">
           {formControls.map((controlItem) => (
@@ -132,7 +278,8 @@ function CommonForm({
             </div>
           ))}
         </CardContent>
-        <CardFooter className="flex justify-between items-center mt-5">
+
+        <CardFooter className="flex justify-center mt-5">
           <Button
             type="submit"
             disabled={isBtnDisabled}
@@ -164,10 +311,12 @@ function CommonForm({
           </Button>
         </CardFooter>
       </form>
+
       <BorderBeam duration={8} size={100} />
     </Card>
   );
 }
+
 
 export function CommonForm_2({
   formControls,

@@ -193,7 +193,7 @@ function ShoppingCheckout() {
 
   return (
     <div className="flex flex-col">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5 p-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-5 p-5">
         <Address setCurrentSelectedAddress={setCurrentSelectedAddress} />
         <div className="flex flex-col">
           {/* Selected Address Display */}
@@ -314,9 +314,9 @@ function ShoppingCheckout() {
               Rs. {finalTotal.toFixed(2)}
             </motion.span>
           </motion.div>
-          <div className="mt-4 w-full">
+          <div className="mt-4 w-full flex-wrap">
             <Button
-              className="w-1/2 p-7 italic text-lg bg-gradient-to-r from-[#C9A66B] to-[#A67C52] text-black font-bold shadow-lg transition-transform duration-200 ease-in-out transform hover:scale-105 hover:shadow-2xl  hover:text-white animate-pulse"
+              className="w-[full] p-7  italic  text-lg bg-gradient-to-r from-[#C9A66B] to-[#A67C52] text-black font-bold shadow-lg transition-transform duration-200 ease-in-out transform hover:scale-105 hover:shadow-2xl  hover:text-white animate-pulse"
               style={{
                 background: "linear-gradient(135deg, #C9A66B 0%, #A67C52 100%)",
                 border: "none",

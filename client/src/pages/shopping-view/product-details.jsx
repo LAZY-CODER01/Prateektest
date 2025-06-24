@@ -150,7 +150,7 @@ function ProductDetailsPage() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-7xl mx-auto mt-8">
+      <div className="max-w-7xl mx-2 md:mx-12 xl:mx-auto my-8">
         {/* Back Button */}
         <motion.div
           initial={{ x: -20, opacity: 0 }}
@@ -180,7 +180,7 @@ function ProductDetailsPage() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="overflow-hidden rounded-xl shadow-xl h-[600px] w-full"
+              className="overflow-hidden rounded-xl shadow-xl h-50vh w-full"
             >
               <img
                 src={productDetails?.image}
@@ -279,7 +279,7 @@ function ProductDetailsPage() {
                   {reviews && reviews.length > 0 ? (
                     reviews.map((reviewItem) => (
                       <div className="bg-gray-50 rounded-lg p-4">
-                        <div className="flex gap-4">
+                        <div className="flex gap-2 [@media(min-width:400px)]:gap-3">
                           <Avatar className="w-12 h-12 border-2 border-amber-200">
                             <AvatarFallback className="bg-amber-100 text-amber-800">
                               {reviewItem?.userName[0].toUpperCase()}
@@ -300,7 +300,7 @@ function ProductDetailsPage() {
                                 })}
                               </span>
                             </div>
-                            <div className="flex items-center gap-2 mb-2">
+                            <div className="flex items-center gap-1 mb-2">
                               <StarRatingComponent
                                 rating={reviewItem?.reviewValue}
                               />

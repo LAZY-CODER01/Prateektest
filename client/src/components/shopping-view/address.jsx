@@ -267,7 +267,7 @@ function Address({ setCurrentSelectedAddress }) {
           animate="visible"
           className="mb-8"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
             <AnimatePresence>
               {addressList && addressList.length > 0 ? (
                 addressList.map((singleAddressInfo, index) => (
@@ -384,7 +384,7 @@ function Address({ setCurrentSelectedAddress }) {
           animate="visible"
           className="mt-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <motion.div
               variants={itemVariants}
               className="text-center p-6 rounded-lg bg-white/80 backdrop-blur-sm border border-amber-200"

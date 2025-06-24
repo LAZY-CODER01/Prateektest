@@ -71,7 +71,7 @@ function ShoppingProductTile({ product, handleAddToCart, cartItems = [] }) {
           {/* Product Title */}
           <CardItem
             translateZ="50"
-            className="text-4xl font-semibold mt-8 tracking-tight"
+            className="text-3xl  font-semibold mt-8 tracking-tight"
             style={{
               fontFamily: "'Satisfy', serif",
               color: "#3A3845",
@@ -80,7 +80,7 @@ function ShoppingProductTile({ product, handleAddToCart, cartItems = [] }) {
           >
             <motion.div
               whileHover={{ x: 5 }}
-              className="border-b pb-2 border-amber-400"
+              className="border-b pb-2 flex flex-wrap border-amber-400"
             >
               {product?.title}
             </motion.div>
