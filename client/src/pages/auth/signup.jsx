@@ -65,7 +65,7 @@ function AuthSignUp() {
   return (
     <div className="mx-auto w-full max-w-md space-y-6 z-50">
       <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-shadow-lg/20 text-white">
+        <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-shadow-lg/20 text-white">
           Create new account
           <Separator className="mt-2" />
         </h1>

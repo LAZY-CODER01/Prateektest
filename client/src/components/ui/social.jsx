@@ -57,9 +57,9 @@ const StyledWrapper = styled.div`
 
     display: inline-flex;
     list-style: none;
-    height: 120px;
+    height: 60px;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 50px;
     font-family: "Poppins", sans-serif;
     justify-content: center;
   }
@@ -68,10 +68,10 @@ const StyledWrapper = styled.div`
     position: relative;
     background: #fff;
     border-radius: 50%;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
+    margin: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +84,7 @@ const StyledWrapper = styled.div`
   .wrapper .tooltip {
     position: absolute;
     top: 0;
-    font-size: 14px;
+    font-size: 12px;
     background: #fff;
     color: #fff;
     padding: 5px 8px;
@@ -98,8 +98,8 @@ const StyledWrapper = styled.div`
   .wrapper .tooltip::before {
     position: absolute;
     content: "";
-    height: 8px;
-    width: 8px;
+    height: 7px;
+    width: 7px;
     background: #fff;
     bottom: -3px;
     left: 50%;
