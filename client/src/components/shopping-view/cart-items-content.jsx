@@ -77,7 +77,7 @@ function UserCartItemsContent({ cartItem }) {
         duration: 0.3,
       }}
     >
-      <div className="m-2 flex items-center space-x-4 p-3 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 group relative overflow-hidden ">
+      <div className="m-2 flex items-center  space-x-4 p-3 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 group relative overflow-hidden ">
         {/* Animated background gradient */}
         <div className="absolute bg-gradient-to-r from-amber-50/50 to-amber-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

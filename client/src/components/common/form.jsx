@@ -184,7 +184,7 @@ function CommonForm({
       case "input":
         return (
           <Input
-            className="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-1.5 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             name={getControlItem.name}
             placeholder={getControlItem.placeholder}
             id={getControlItem.name}
@@ -210,7 +210,7 @@ function CommonForm({
             }
             value={value}
           >
-            <SelectTrigger className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <SelectTrigger className="w-full px-4 py-1.5 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
               <SelectValue placeholder={getControlItem.label} />
             </SelectTrigger>
             <SelectContent>
@@ -226,7 +226,7 @@ function CommonForm({
       case "textarea":
         return (
           <Textarea
-            className="w-full px-4 py-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-1.5 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             name={getControlItem.name}
             placeholder={getControlItem.placeholder}
             id={getControlItem.name}
@@ -243,7 +243,7 @@ function CommonForm({
       default:
         return (
           <Input
-            className="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-1.5 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             name={getControlItem.name}
             placeholder={getControlItem.placeholder}
             id={getControlItem.name}
@@ -261,11 +261,11 @@ function CommonForm({
   }
 
   return (
-    <Card className="relative w-full max-w-md mx-auto px-4 sm:px-6 py-6 sm:py-8 shadow-xl/20 form-card">
+    <Card className="relative w-full max-w-md mx-auto px-4 sm:px-6 py-5 sm:py-5 shadow-xl/20 form-card">
       <CardHeader></CardHeader>
 
       <form onSubmit={onSubmit}>
-        <CardContent className="grid gap-4">
+        <CardContent className="grid gap-3">
           {formControls.map((controlItem) => (
             <div className="flex flex-col space-y-1.5" key={controlItem.name}>
               <Label

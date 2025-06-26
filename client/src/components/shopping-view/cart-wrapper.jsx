@@ -27,7 +27,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
   const itemCount = cartItems?.length || 0;
 
   return (
-    <SheetContent className="sm:max-w-md bg-gradient-to-br from-white via-gray-50 to-blue-50">
+    <SheetContent className="w-full sm:max-w-md bg-gradient-to-br from-white via-gray-50 to-blue-50">
       <SheetHeader className="">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -56,7 +56,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
       </SheetHeader>
 
       <motion.div
-        className="mt-4 space-y-6 max-h-[55vh] overflow-y-auto pr-4 pb-4 cart-scroll"
+        className="mt-4 space-y-6 max-h-[55vh] min-h-[25vh] overflow-y-auto pr-4 pb-4 cart-scroll"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -64,6 +64,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
         <AnimatePresence>
           {cartItems && cartItems.length > 0 ? (
             cartItems.map((item, index) => (
+              <div className=" min-h-14">
               <motion.div
                 key={item._id || item.id}
                 initial={{ opacity: 0, x: -50 }}
@@ -80,6 +81,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
               >
                 <UserCartItemsContent cartItem={item} />
               </motion.div>
+              </div>
             ))
           ) : (
             <motion.div
@@ -114,7 +116,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
       </motion.div>
 
       <motion.div
-        className=" border-t pt-6"
+        className=" border-t pt-6 overflow-y-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
