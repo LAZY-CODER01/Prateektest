@@ -14,9 +14,9 @@ const images = [
 
 function FlickeringGridDemo() {
   return (
-    <div className="absolute inset-0 z-0 h-full w-full">
+    <div className="absolute inset-0 z-0 ">
       <FlickeringGrid
-        className="size-full z-[-1]"
+        className=" z-[-1]"
         squareSize={4}
         gridGap={6}
         color="#44200D"
@@ -72,7 +72,7 @@ function AuthLayout() {
         </div>
       </div>
       
-      <div className="flex flex-1 max-h-screen overflow-hidden flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 login-signup-background">
+      <div className="flex relative flex-1 max-h-screen overflow-hidden flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 login-signup-background">
         <FlickeringGridDemo />
         <Outlet />
         {/* <Social /> */}

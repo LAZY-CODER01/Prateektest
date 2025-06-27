@@ -159,7 +159,7 @@ export const FlickeringGrid = ({
   return (
     <div
       ref={containerRef}
-      className={cn(`h-full w-full ${className}`)}
+      className={cn(`h-[120vh] w-full ${className}`)}
       {...props}>
       <canvas
         ref={canvasRef}
