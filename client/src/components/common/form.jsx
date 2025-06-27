@@ -261,8 +261,8 @@ function CommonForm({
   }
 
   return (
-    <Card className="relative w-full max-w-md mx-auto px-4 sm:px-6 py-5 sm:py-5 shadow-xl/20 form-card">
-      <CardHeader></CardHeader>
+    <Card className="relative w-full overflow-hidden max-w-md mx-auto px-4 sm:px-6 py-5 sm:py-5 shadow-xl/20 form-card">
+      {/* <CardHeader></CardHeader> */}
 
       <form onSubmit={onSubmit}>
         <CardContent className="grid gap-3">
