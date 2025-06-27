@@ -72,7 +72,7 @@ function AuthLayout() {
         </div>
       </div>
       
-      <div className="flex relative flex-1 max-h-screen overflow-hidden flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 login-signup-background">
+      <div className="flex relative flex-1  overflow-hidden flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 login-signup-background">
         <FlickeringGridDemo />
         <Outlet />
         {/* <Social /> */}
