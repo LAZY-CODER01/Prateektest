@@ -54,19 +54,14 @@ const App = () => {
         {/* common component */}
         {/* <h1>Header components</h1> */}
         <Routes>
-        <Route
-          path="/"
-          element={
-              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              </CheckAuth>
-            }
-        />
+          <Route
+            path="/"
+            element={<ShoppingHome />} // Public route
+          />
           <Route
             path="/auth"
             element={
-              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-                <AuthLayout />
-              </CheckAuth>
+              <AuthLayout /> // Public route
             }
           >
             <Route path="login" element={<AuthLogin />} />
@@ -90,9 +85,7 @@ const App = () => {
           <Route
             path="/shop"
             element={
-              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-                <ShoppingLayout />
-              </CheckAuth>
+              <ShoppingLayout /> // Public route
             }
           >
             <Route path="account" element={<ShoppingAccount />} />
@@ -106,7 +99,6 @@ const App = () => {
             <Route path="profile" element={<UserProfile />} />
             <Route path="payment-success" element={<PaymentSuccess />} />
             <Route path="search" element={<Search />} />
-
           </Route>
           <Route path="*" element={<NotFound />} />
           <Route path="/unauth-page" element={<UnauthPage />} />
