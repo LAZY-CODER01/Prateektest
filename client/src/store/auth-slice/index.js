@@ -7,6 +7,7 @@ const initialState = {
   isVerified: false,
   isLoading: true,
   user: null,
+  loginStatus: false, // <-- add this
 };
 
 export const signupUser = createAsyncThunk(
@@ -97,6 +98,9 @@ const authSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
+    setLoginStatus: (state, action) => { // <-- add this
+      state.loginStatus = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -125,12 +129,14 @@ const authSlice = createSlice({
         state.isVerified = action.payload.success
           ? action.payload.user.isVerified
           : false;
+        state.loginStatus = !!action.payload.success; // <-- update here
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.user = null;
         state.isAuthenticated = false;
         state.isVerified = false;
+        state.loginStatus = false; // <-- update here
       })
       .addCase(checkAuth.pending, (state) => {
         state.isLoading = true;
@@ -173,5 +179,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUser } = authSlice.actions;
+export const { setUser, setLoginStatus } = authSlice.actions; // <-- export new action
 export default authSlice.reducer;

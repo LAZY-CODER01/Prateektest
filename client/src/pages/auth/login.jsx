@@ -1,5 +1,5 @@
- // register.jsx
-import { Link } from "react-router-dom";
+// register.jsx
+import { Link, useNavigate } from "react-router-dom"; // <-- add useNavigate
 import CommonForm, { CommonForm_2 } from "@/components/common/form";
 import { loginFormControls } from "@/config";
 import { useState } from "react";
@@ -23,6 +23,7 @@ const initialState = {
 function AuthLogin() {
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // <-- add this
 
   function onSubmit(event) {
     event.preventDefault();
@@ -40,6 +41,10 @@ function AuthLogin() {
             fontSize: "15px",
           },
         });
+
+        if (isSuccess) {
+          navigate("/"); // <-- redirect on success
+        }
       })
       .catch(() => {});
   }

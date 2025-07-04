@@ -2,7 +2,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+ import { useSelector } from "react-redux";
 import { Badge } from "@/components/ui/badge";
+import ShoppingHeader from "../../components/shopping-view/header";
+import Footer from "../../components/shopping-view/footer";
 import {
   ArrowRight,
   Star,
@@ -28,6 +31,9 @@ import { Separator } from "@/components/ui/separator";
 function ShoppingHome() {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
+ 
+const loginStatus = useSelector((state) => state.auth.loginStatus);
+ console.log("Login Status:", loginStatus);
 
   // Sample products for carousel
   const featuredProducts = [
@@ -254,6 +260,8 @@ function ShoppingHome() {
   }, [carouselImages.length]);
 
   return (
+    <div>
+      <ShoppingHeader/>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -847,6 +855,8 @@ function ShoppingHome() {
         </motion.div>
       </section>
     </motion.div>
+     <Footer />
+  </div>
   );
 }
 

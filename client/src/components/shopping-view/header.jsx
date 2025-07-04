@@ -589,7 +589,7 @@ function ShoppingHeader() {
       >
         <div className="flex h-16 items-center justify-between px-4 md:px-6">
           <Link
-            to="/shop/home"
+            to="/"
             className="flex items-center gap-2 border-none mudrika text-lg text-white md:text-3xl"
           >
             Mudrika International
